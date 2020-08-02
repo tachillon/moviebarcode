@@ -119,7 +119,7 @@ def getBlackBarHeight(img):
         exit(1)
 
 @profile
-def removeEndCreditBlackColor(img):
+def removeEndCreditsBlackColor(img):
     height      = img.shape[0]
     width       = img.shape[1]
     pixel_value = 0
@@ -187,7 +187,7 @@ def create_frameline(video_path, output_image_path):
             blank_image[:,counter,2] = int(colour[2]) # R
             counter = counter + 1
         # remove end credits black color
-        output_img = removeEndCreditBlackColor(blank_image)
+        output_img = removeEndCreditsBlackColor(blank_image)
         cv2.imwrite(output_image_path, output_img)
     except Exception as e:
         logger.info('Something went wrong... Oopsie!')
