@@ -76,6 +76,7 @@ def frameCounter(video_path):
     fvs.stop()
     return frameNumber
 
+@profile
 def getDominantColour(img):
     average            = img.mean(axis=0).mean(axis=0)
     pixels             = np.float32(img.reshape(-1, 3))
@@ -87,6 +88,7 @@ def getDominantColour(img):
     dominant           = palette[np.argmax(counts)]
     return dominant
 
+@profile
 def getBlackBarHeight(img):
     # TODO: what happen if no black bars?
     # height, width, number of channels in image
